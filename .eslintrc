@@ -1,0 +1,35 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "eslint-plugin-react"
+  ],
+  "extends": [
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "bracketSpacing": true,
+        "parser": "flow"
+      }
+    ],
+    "strict": [
+      "error",
+      "never"
+    ]
+  },
+  "env": {
+    "browser": true,
+    "jest": true,
+    "commonjs": true
+  }
+}
