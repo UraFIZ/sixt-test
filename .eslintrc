@@ -22,7 +22,8 @@
         "bracketSpacing": true,
         "parser": "flow",
         "semi": true,
-        "endOfLine": "auto"
+        "endOfLine": "auto",
+        "disallowArithmeticOperators": "true"
       }
     ],
     "strict": [

@@ -1,3 +1,6 @@
+import axios from 'axios';
+import _ from 'lodash';
+
 import {
   FETCH_COLLECTION_START,
   FETCH_COLLECTION_SUCCESS,
@@ -18,10 +21,15 @@ const fetchCollectionSuccess = (data) => ({
   payload: data,
 });
 
-export const fetchOffers = () => (dispatch) => {
+export const fetchCollection = () => async (dispatch) => {
   dispatch(fetchCollectionStart());
+  const {
+    data: { offers },
+  } = await axios.get('http://cdn.sixt.io/codingtask/offers.json');
+  // use to boost performance while CRUD
+  const normalizedData = _.keyBy(offers, 'id');
   try {
-    dispatch(fetchCollectionSuccess());
+    dispatch(fetchCollectionSuccess(normalizedData));
   } catch (error) {
     dispatch(fetchCollectionFailed(error));
   }
