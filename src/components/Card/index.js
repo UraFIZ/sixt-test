@@ -1,14 +1,15 @@
 import React from 'react';
-import CustomButton from 'src/components/Button';
 
 const Card = ({ name, price, image, onClick }) => {
   return (
-    <div>
+    <>
       <h2>{name}</h2>
       <p>{price}</p>
-      <img src={image} alt={name} />
-      <CustomButton onClick={onClick}>See details</CustomButton>
-    </div>
+      <img
+        src={image || 'https://cdn.sixt.io/fleet/images/1600x640/bmw-5-mf-03.jpg'}
+        alt={name}
+      />
+    </>
   );
 };
 

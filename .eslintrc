@@ -14,12 +14,16 @@
   ],
   "rules": {
     "no-console": "warn",
+    "endOfLine": "off",
     "prettier/prettier": [
-      "error",
+      "warn",
       {
         "singleQuote": true,
         "bracketSpacing": true,
-        "parser": "flow"
+        "parser": "flow",
+        "semi": true,
+        "endOfLine": "auto",
+        "disallowArithmeticOperators": "true"
       }
     ],
     "strict": [
