@@ -1,0 +1,16 @@
+.container {
+    display: grid;
+    width: 100%;
+    max-width: 138rem;
+    margin: auto;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include respond(tab-land) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(_700_) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    grid-gap: 2rem;
+    padding-left: 2rem;
+}

@@ -23,13 +23,16 @@ const fetchCollectionSuccess = (data) => ({
 
 export const fetchCollection = () => async (dispatch) => {
   dispatch(fetchCollectionStart());
-  const {
-    data: { offers },
-  } = await axios.get('http://cdn.sixt.io/codingtask/offers.json');
-  // use to boost performance while CRUD
-  const normalizedData = _.keyBy(offers, 'id');
+
   try {
-    dispatch(fetchCollectionSuccess(normalizedData));
+    const {
+      data: { offers },
+    } = await axios.get('http://cdn.sixt.io/codingtask/offers.json');
+    // use to boost performance while CRUD
+    const normalizedData = _.keyBy(offers, 'id');
+    setTimeout(() => {
+      dispatch(fetchCollectionSuccess(normalizedData));
+    }, 2000);
   } catch (error) {
     dispatch(fetchCollectionFailed(error));
   }
