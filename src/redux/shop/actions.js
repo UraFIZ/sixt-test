@@ -29,7 +29,9 @@ export const fetchCollection = () => async (dispatch) => {
   // use to boost performance while CRUD
   const normalizedData = _.keyBy(offers, 'id');
   try {
-    dispatch(fetchCollectionSuccess(normalizedData));
+    setTimeout(() => {
+      dispatch(fetchCollectionSuccess(normalizedData));
+    }, 3000);
   } catch (error) {
     dispatch(fetchCollectionFailed(error));
   }
