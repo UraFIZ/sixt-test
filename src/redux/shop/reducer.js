@@ -4,13 +4,13 @@ import {
   FETCH_COLLECTION_ERROR,
 } from 'src/redux/shop/types';
 
-const INITIAL_STATE = {
+export const INITIAL_STATE = {
   collections: null,
   isFetching: false,
   errorMessage: null,
 };
 
-const shopReducer = (state = INITIAL_STATE, action) => {
+export const shopReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_COLLECTION_START:
       return {
@@ -33,5 +33,3 @@ const shopReducer = (state = INITIAL_STATE, action) => {
       return state;
   }
 };
-
-export default shopReducer;
