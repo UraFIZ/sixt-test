@@ -16,7 +16,7 @@ const CarStore = ({ collections }) => {
             <Card
               key={item.id}
               name={item.carGroupInfo.modelExample.name}
-              price="price"
+              price={`${item.prices.basePrice.amount.display} ${item.prices.basePrice.amount.currency}`}
               image={item.carGroupInfo.modelExample.imageUrl}
             />
           </Tilt>
