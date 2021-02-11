@@ -6,8 +6,6 @@ import Card from 'src/components/Card';
 import { selectCollections } from 'src/redux/shop/selectors';
 
 const CarStore = ({ collections }) => {
-  console.log('colection', Object.values(collections));
-
   return (
     <div>
       {Object.values(collections).map((item) => (
