@@ -11,5 +11,6 @@
     @include respond(_700_) {
         grid-template-columns: repeat(1, 1fr);
     }
-    grid-gap: 5px;
+    grid-gap: 2rem;
+    padding-left: 2rem;
 }

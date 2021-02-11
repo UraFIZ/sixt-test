@@ -4,7 +4,6 @@ import { createStructuredSelector } from 'reselect';
 
 import Card from 'src/components/Card';
 import { selectCollections } from 'src/redux/shop/selectors';
-import './style.scss';
 
 const CarStore = ({ collections }) => {
   return (
